@@ -36,7 +36,6 @@ describe('Round', function() {
 
   it('should return the current card', () => {
     round.returnCurrentCard();
-    expect(round.currentCard.id).to.equal(1)
     expect(round.currentCard.correctAnswer).to.equal('sea otter')
   })
 
@@ -55,7 +54,37 @@ describe('Round', function() {
   })
 
   it('should count the number of incorrect guesses', () => {
+    round.takeTurn('pug');
+    round.takeTurn('sea otter');
+    expect(round.incorrectGuesses).to.equal(1);
+    
+    round.takeTurn('spleen');
+    round.takeTurn('gallbladder');
+    expect(round.incorrectGuesses).to.equal(2);
+  })
 
+  it('should count the number of correct guesses', () => {
+    round.takeTurn('pug');
+    round.takeTurn('sea otter');
+    expect(round.correctGuesses).to.equal(1);
+    
+    round.takeTurn('spleen');
+    round.takeTurn('appendix');
+    round.takeTurn('gallbladder');
+    expect(round.correctGuesses).to.equal(2);
+  })
+
+  it('should calculate the percentage of correct guesses', () => {
+    round.takeTurn('pug');
+    round.takeTurn('sea otter');
+    let score = round.calculatePercentCorrect();
+    expect(score).to.equal(50)
+    
+    round.takeTurn('spleen');
+    round.takeTurn('appendix');
+    round.takeTurn('gallbladder');
+    score = round.calculatePercentCorrect();
+    expect(score).to.equal(40)
   })
 
 })

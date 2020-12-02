@@ -12,7 +12,7 @@ class Round {
     this.currentCard = this.deck.cards[this.correctGuesses];
   }
   takeTurn(guess) {
-    let turn = new Turn(guess, this.currentCard)
+    // let turn = new Turn(guess, this.currentCard)
     this.turns++;
     if (this.currentCard.correctAnswer === guess){
       this.correctGuesses++;
@@ -20,6 +20,9 @@ class Round {
       this.incorrectGuesses++;
     }
     this.returnCurrentCard();
+  }
+  calculatePercentCorrect() {
+    return ((this.correctGuesses / this.turns) * 100)
   }
 
 }
