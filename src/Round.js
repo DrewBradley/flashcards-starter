@@ -9,20 +9,30 @@ class Round {
     this.incorrectGuesses = 0;
   }
   returnCurrentCard() {
-    this.currentCard = this.deck.cards[this.correctGuesses];
+    if(!this.currentCard) {
+      this.endRound();
+    } else {
+      return this.currentCard = this.deck.cards[this.correctGuesses];
+    }
   }
   takeTurn(guess) {
-    // let turn = new Turn(guess, this.currentCard)
+    let turn = new Turn(guess, this.currentCard)
     this.turns++;
+    let feedback = turn.giveFeedback();
     if (this.currentCard.correctAnswer === guess){
       this.correctGuesses++;
     } else {
       this.incorrectGuesses++;
     }
     this.returnCurrentCard();
+    return feedback;
   }
   calculatePercentCorrect() {
     return ((this.correctGuesses / this.turns) * 100)
+  }
+  endRound() {
+    let score = this.calculatePercentCorrect();
+    console.log(`**Round over!** You answered ${score}% of the questions correctly!`)
   }
 
 }

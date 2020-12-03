@@ -1,5 +1,3 @@
-const Round = require("./Round");
-
 class Turn {
   constructor(guess, card) {
     this.guess = guess;
