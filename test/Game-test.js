@@ -21,14 +21,10 @@ describe('Game', function() {
 
   it('should start a new game', () => {
     game.start()
-    expect(game.deck.cards.length).to.be.equal(30)
+    expect(game.deck).to.be.instanceOf(Deck);
+    expect(game.deck.cards.length).to.be.equal(30);
+    expect(game.round).to.be.instanceOf(Round);
+    expect(game.printMessage).to.be.a('function');
+    expect(game.printQuestion).to.be.a('function');
   })
-
-  it('should return a message upon starting', () => {
-    game.start()
-    game.printMessage(game.deck);
-    expect(console.log).to.equal('Welcome to FlashCards! You are playing with 30 cards.\
-    -----------------------------------------------------------------------')
-  })
-
 })

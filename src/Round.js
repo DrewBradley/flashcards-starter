@@ -24,7 +24,6 @@ class Round {
     } else {
       this.incorrectGuesses++;
     }
-    this.returnCurrentCard();
     return feedback;
   }
   calculatePercentCorrect() {
