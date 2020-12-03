@@ -7,18 +7,20 @@ const util = require('./util');
 
 class Game {
   constructor() {
+    this.deck = [];
+    this.round ;
+    this.cards = [];
   }
 
   start() {
-    const cards = [];
     prototypeQuestions.forEach(obj => {
       let card = new Card(obj.id, obj.question, obj.answers, obj.correctAnswer)
-      cards.push(card);
+      this.cards.push(card);
     })
-    const deck = new Deck(cards);
-    const round = new Round(deck);
-    this.printMessage(deck, round);
-    this.printQuestion(round);
+    this.deck = new Deck(this.cards);
+    this.round = new Round(this.deck);
+    this.printMessage(this.deck, this.round);
+    this.printQuestion(this.round);
   }
 
   printMessage(deck, round) {
