@@ -9,7 +9,7 @@ class Round {
     this.incorrectGuesses = 0;
   }
   returnCurrentCard() {
-    if(!this.currentCard) {
+    if (!this.currentCard) {
       this.endRound();
     } else {
       return this.currentCard = this.deck.cards[this.turns];

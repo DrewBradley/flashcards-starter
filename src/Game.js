@@ -8,7 +8,7 @@ const util = require('./util');
 class Game {
   constructor() {
     this.deck = [];
-    this.round ;
+    this.round;
     this.cards = [];
   }
 
@@ -23,13 +23,13 @@ class Game {
     this.printQuestion(this.round);
   }
 
-  printMessage(deck, round) {
-      console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
+  printMessage(deck) {
+    console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }
 
   printQuestion(round) {
-      util.main(round);
+    util.main(round);
   }
 }
 
