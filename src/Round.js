@@ -9,22 +9,21 @@ class Round {
     this.incorrectGuesses = 0;
   }
   returnCurrentCard() {
-    if(!this.currentCard) {
+    if (!this.currentCard) {
       this.endRound();
     } else {
-      return this.currentCard = this.deck.cards[this.correctGuesses];
+      return this.currentCard = this.deck.cards[this.turns];
     }
   }
   takeTurn(guess) {
     let turn = new Turn(guess, this.currentCard)
     this.turns++;
     let feedback = turn.giveFeedback();
-    if (this.currentCard.correctAnswer === guess){
+    if (turn.evaluateGuess() === true) {
       this.correctGuesses++;
     } else {
       this.incorrectGuesses++;
     }
-    this.returnCurrentCard();
     return feedback;
   }
   calculatePercentCorrect() {

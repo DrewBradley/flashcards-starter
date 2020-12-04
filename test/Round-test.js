@@ -83,7 +83,7 @@ describe('Round', function() {
     round.takeTurn('spleen');
     round.takeTurn('appendix');
     round.takeTurn('gallbladder');
-    score = round.calculatePercentCorrect();
+    let score = round.calculatePercentCorrect();
     expect(score).to.equal(40)
   })
   it('should end when all cards are played', () => {
@@ -91,7 +91,7 @@ describe('Round', function() {
     round.takeTurn('sea otter');
     round.takeTurn('gallbladder');
     round.takeTurn('Fitzgerald');
-    score = round.calculatePercentCorrect();
+    let score = round.calculatePercentCorrect();
     expect(round.correctGuesses).to.equal(3);
     expect(score).to.equal(75);
   })
