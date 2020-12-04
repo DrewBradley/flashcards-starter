@@ -1,79 +1,48 @@
-# FlashCards Starter Kit
+# FlashCards
 
-## Fork This Repo
+## Overview
 
-On the top right corner of this page, click the **Fork** button.
+Flashcards is a simple multiple choice test that can be played in the CLI (Command-Line-Interface).
 
 ## Setup
 
-Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
-
-```bash
-git clone [remote-address] [what you want to name the repo]
-```
-
-Once you have cloned the repo, change into the directory and install the library dependencies. Run:
-
-```bash
-npm install
-```
-
-To verify that it is setup correctly, run `npm test` in your terminal. You should have 5 pending tests in your `Card` test file that show up.
+Clone down the repo. 
+ - ```git clone git@github.com:DrewBradley/flashcards-starter.git```
+Once you have cloned the repo, change into the directory 
+ - ```cd flashcards```
+Install the library dependencies. 
+ - ```npm install```
 
 Running `node index.js` from the root of your project should result in the following message being displayed in your terminal: 
 
-```bash
+```
 Node server running on port 3000
+Welcome to FlashCards! You are playing with 30 cards.
 ```
 
-*Note that you will not need to you run your server until you are instantiating your `Game` class in Iteration 3. Prior to that, you should be using TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
+## Technologies
 
+Flashcards is built using JavaScript, and runs in the Command Line Interface.
 
-## Where to Add Your Code
+## Architecture
 
-### JavaScript
+The program is initialized by running the ```index.js``` file in the CLI. 
+ - This instantiates a new ```Game``` class, and runs ```Game.start()```. 
+ - This function creates new instances of ```Card``` class by iterating through ```data.js``` and pushing them into an array that is then made into an instance of ```Deck``` class.  
+ - ```Game.start()``` also creates a new ```Round``` instance, which is passed into the ```printMessage()``` function which prints a message indicating the start of a new game!. 
 
-**Create all of your feature code files in the `src` directory.**
+ ## Wins/Challenges
 
-We will be using the `module.exports` and `require` syntax to share code across files.
+ Wins:
+ - Getting the game to run in Terminal!
+ - Learning how to write concise tests that test the correct thing.
+ Challenges:
+ - I struggled at the beginning of the project to understand what the rubric was asking for.
+ - Building an application that I could not see was working, until it did.
 
-## How to View Your Code in Action
+## Images
 
-Once you are working through Iteration 3, you will want to start your server to test your functionality.
-In the terminal, run:
-
-```bash
-node index.js
-```
-
-When the game is functioning appropriately, you will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck of cards:
-
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
+![flash cards example gif](https://media.giphy.com/media/N1b12vhNosmnfOSErl/giphy.gif)
 
 ---
 
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `Round-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
-
----
-
-## Linting Your Code
-
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
-
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
-
----
