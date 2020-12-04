@@ -8,8 +8,10 @@ Flashcards is a simple multiple choice test that can be played in the CLI (Comma
 
 Clone down the repo. 
  - ```git clone git@github.com:DrewBradley/flashcards-starter.git```
+
 Once you have cloned the repo, change into the directory 
  - ```cd flashcards```
+
 Install the library dependencies. 
  - ```npm install```
 
@@ -36,6 +38,7 @@ The program is initialized by running the ```index.js``` file in the CLI.
  Wins:
  - Getting the game to run in Terminal!
  - Learning how to write concise tests that test the correct thing.
+ 
  Challenges:
  - I struggled at the beginning of the project to understand what the rubric was asking for.
  - Building an application that I could not see was working, until it did.

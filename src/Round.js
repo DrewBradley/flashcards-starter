@@ -4,9 +4,10 @@ class Round {
   constructor(deck) {
     this.deck = deck;
     this.turns = 0;
-    this.correctGuesses = 0;
     this.currentCard = deck.cards[0];
+    this.correctGuesses = 0;
     this.incorrectGuesses = 0;
+    this.roundCount = 1;
   }
   returnCurrentCard() {
     if (!this.currentCard) {
@@ -32,6 +33,9 @@ class Round {
   endRound() {
     let score = this.calculatePercentCorrect();
     console.log(`**Round over!** You answered ${score}% of the questions correctly!`)
+    this.roundCount++
+    //start a new game
+    //somehow call index.js?
   }
 
 }
