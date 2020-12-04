@@ -12,8 +12,8 @@ class Game {
     this.cards = [];
   }
 
-  start() {
-    prototypeQuestions.forEach(obj => {
+  start(array) {
+    array.forEach(obj => {
       let card = new Card(obj.id, obj.question, obj.answers, obj.correctAnswer)
       this.cards.push(card);
     })
@@ -23,8 +23,8 @@ class Game {
     this.printQuestion(this.round);
   }
 
-  printMessage(deck) {
-    console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
+  printMessage(deck, round) {
+    console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards. Round ${round.roundCount}!
 -----------------------------------------------------------------------`)
   }
 
